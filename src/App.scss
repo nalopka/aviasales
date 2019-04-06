@@ -1,0 +1,12 @@
+.body {
+    display: flex;
+    justify-content: center;
+    width: 1024px;
+    background-color: rgb(243, 247, 250);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font: 16px Helvetica, sans-serif;
+}

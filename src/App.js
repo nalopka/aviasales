@@ -1,9 +1,9 @@
 import axios from 'axios';
-import * as _ from 'lodash';
 import React, { Component } from 'react';
-import Ticket from 'src/components/Ticket';
+import Ticket from './components/Ticket';
+import FilterBasket from './components/FilterBasket';
 
-import './App.css';
+import './App.scss';
 
 class App extends Component {
     state = {
@@ -14,23 +14,19 @@ class App extends Component {
         this.fetchTickets();
     }
 
-    fetchTickets = () => {
-        axios.get('/tickets.json')
-            .then(function(response) {
-                const tickets = _.result(response, 'data.tickets', {});
-                this.setState({tickets})
-            })
-            .catch(function(error) {
-                console.log(error);
-            })
+    fetchTickets = async () => {
+        let res = await axios.get("/tickets.json");
+        let { tickets } = await res.data;
+        this.setState({ tickets });
     };
 
     render() {
         const { tickets } = this.state;
         return (
-            <div className="App">
+            <div className="body">
+                <FilterBasket />
                 <Ticket
-                    listOfTickets={tickets}
+                    tickets={tickets}
                 />
             </div>
         );

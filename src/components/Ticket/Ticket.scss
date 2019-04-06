@@ -1,0 +1,104 @@
+.ticket-list {
+
+    .ticket-item {
+        width: 566px;
+        height: 161px;
+        background-color: #fff;
+        display: flex;
+        border-radius: 5px;
+        margin-bottom: 20px;
+
+        .content {
+            padding: 26px  25px 0;
+
+            .flight-brief {
+                display: flex;
+
+                time {
+                    display: inline-block;
+                    font-size: 2rem;
+                    padding-bottom: 10px;
+                }
+
+                &-layovers {
+                    position: relative;
+                    width: 105px;
+                    height: 50px;
+                    margin-left: 0px;
+                    margin-right: 20px;
+
+                    .transfer-count {
+                        text-transform: uppercase;
+                        position: relative;
+                        top: 14px;
+                        left: 10px;
+                        width: 75px;
+                        text-align: center;
+                        font-size: 11px;
+                        color: #D2D6D6;
+                    }
+
+                    .logo {
+                        position: absolute;
+                        right: -5px;
+                        top: 50%;
+                        width: 105px;
+                        text-align: right;
+                        height: 14px;
+
+                        img {
+                            width: 13px;
+                            height: 14px;
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: -15px;
+                            height: 1px;
+                            width: 100%;
+                            background-color: #D2D6D6;
+                        }
+                    }
+                }
+
+                &-departure,
+                &-arrival {
+                    p {
+                        font-size: 12px;
+                        margin-bottom: 5px;
+                    }
+                    .time {
+                        font-size: 12px;
+                        color: rgb(139, 148, 151);
+                    }
+                }
+            }
+        }
+
+        .side {
+            width: 201px;
+            height: 100%;
+            text-align: center;
+            padding: 25px 20px;
+            border-right: 1px solid #ECEFF1;
+
+            img {
+                margin-bottom: 20px;
+            }
+
+            .buy-btn {
+                width: 160px;
+                height: 56px;
+                border: none;
+                border-radius: 5px;
+                color: #fff;
+                padding: 0 40px;
+                line-height: 19px;
+                background-color: #FF6D00;
+            }
+
+        }
+    }
+}
