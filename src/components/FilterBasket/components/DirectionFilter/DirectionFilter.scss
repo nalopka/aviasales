@@ -1,0 +1,100 @@
+.transfer-count {
+    .title {
+        text-transform: uppercase;
+        font-family: "Comic Sans MS", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: #4A4A4A;
+        padding-left: 15px;
+        margin-bottom: 15px;
+    }
+
+    .checkbox-label {
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        height: 30px;
+        padding-left: 50px;
+
+        font-size: 12px;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #F1FCFF;
+            .only {
+                z-index: 99;
+                display: block;
+                &:hover {
+                    border-bottom: 1px solid #2196F3;
+                }
+            }
+        }
+
+        input {
+            display: none;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            height: 19px;
+            width: 19px;
+            border: 1px solid #d2D5D6;
+            border-radius: 3px;
+        }
+
+        .only {
+            display: none;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: "Comic Sans MS", sans-serif;
+            font-size: 9px;
+            color: #2196F3;
+            text-transform: uppercase;
+            border-bottom: 1px solid transparent;
+        }
+    }
+
+
+    .checkbox-label:hover input ~ .checkmark {
+        background-color: #F1FCFF;
+        border: 1px solid #2196F3;
+    }
+
+    .checkbox-label input:checked ~ .checkmark {
+        background-color: #F2FCFF;
+        border: 1px solid #2196F3;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: relative;
+        display: none;
+    }
+
+    .checkbox-label input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .checkbox-label .checkmark:after {
+        left: 5.5px;
+        top: 3.5px;
+        width: 4px;
+        height: 6px;
+        border: solid #2196F3;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}

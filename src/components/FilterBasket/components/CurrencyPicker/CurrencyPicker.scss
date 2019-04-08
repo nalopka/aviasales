@@ -1,0 +1,74 @@
+.currency-change {
+    margin-bottom: 15px;
+    padding: 15px;
+    .title {
+        text-transform: uppercase;
+        font-family: "Comic Sans MS", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 400;
+        margin-bottom: 11px;
+        color: #4A4A4A;
+    }
+
+    .currency-picker {
+        display: flex;
+
+        .radio-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 68px;
+            height: 40px;
+
+            color: #2196F3;
+            text-transform: uppercase;
+            border: 1px solid #d2D5D6;
+            cursor: pointer;
+
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+
+            span {
+                font-family: "Comic Sans MS", sans-serif;
+                font-size: 0.7rem;
+            }
+
+            &:hover {
+                background-color: #F2FCFF;
+                border: 1px solid #64B5F5;
+            }
+
+        }
+        .radio-button:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-right: 0;
+
+        }
+        .radio-button:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-left: 0;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+        
+        .radio-button-checked {
+            transition: 0.2s;
+            background-color: #2196F3;
+            color: #fff;
+            &:hover {
+                background-color: #2196F3;
+                border: 1px solid #64B5F5;
+            }
+            &:focus-within {
+                outline: 3px solid #64B5F5;
+            }
+        }
+    }
+}

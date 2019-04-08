@@ -8,6 +8,8 @@
         border-radius: 5px;
         margin-bottom: 20px;
 
+        box-shadow: rgba(91, 137, 164, 0.25) 0 1px 4px;
+
         .content {
             padding: 26px  25px 0;
 
@@ -24,15 +26,16 @@
                     position: relative;
                     width: 105px;
                     height: 50px;
-                    margin-left: 0px;
+
+                    margin-left: 0;
                     margin-right: 20px;
 
                     .transfer-count {
-                        text-transform: uppercase;
                         position: relative;
-                        top: 14px;
-                        left: 10px;
-                        width: 75px;
+                        top: 5px;
+                        left: -8px;
+
+                        text-transform: uppercase;
                         text-align: center;
                         font-size: 11px;
                         color: #D2D6D6;
@@ -41,12 +44,15 @@
                     .logo {
                         position: absolute;
                         right: -5px;
-                        top: 50%;
+                        top: 45%;
                         width: 105px;
-                        text-align: right;
                         height: 14px;
 
+                        text-align: right;
+
                         img {
+                            position: relative;
+                            top: -7px;
                             width: 13px;
                             height: 14px;
                         }
@@ -54,7 +60,7 @@
                         &:after {
                             content: '';
                             position: absolute;
-                            top: 50%;
+                            top: 0;
                             left: -15px;
                             height: 1px;
                             width: 100%;
@@ -73,6 +79,10 @@
                         font-size: 12px;
                         color: rgb(139, 148, 151);
                     }
+                }
+
+                &-arrival {
+                    .time, p { text-align: right;}
                 }
             }
         }
@@ -94,9 +104,21 @@
                 border: none;
                 border-radius: 5px;
                 color: #fff;
-                padding: 0 40px;
+                padding: 0 20px;
                 line-height: 19px;
                 background-color: #FF6D00;
+                box-shadow: #D64D08 0 1px 0;
+                text-align: center;
+
+                span {
+                    display: inline-block;
+                }
+
+                &:hover {
+                    background-color: #FF8121;
+                    cursor: pointer;
+                    box-shadow: #F7661D 0 1px 0;
+                }
             }
 
         }

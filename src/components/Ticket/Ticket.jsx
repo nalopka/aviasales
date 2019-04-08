@@ -5,9 +5,10 @@ import './Ticket.scss';
 import { formatDate, declOfNum } from '../../utils/utils';
 
 function FlightBrief(props) {
-    const { time, destination, destinationName, destinationTime } = props;
+    const { time, destination, destinationName, destinationTime, direction } = props;
+    const directionClassName = `flight-brief-${direction}`;
     return (
-        <div className='flight-brief-departure'>
+        <div className={directionClassName}>
             <time>{time}</time>
             <p>{destination}, {destinationName}</p>
             <div className='time'>{formatDate(destinationTime)}</div>
@@ -16,7 +17,6 @@ function FlightBrief(props) {
 }
 
 function Ticket({ tickets }) {
-    console.log(tickets);
     const renderTickets = () => {
         return _.map(tickets, ticketItem)
     };
@@ -36,7 +36,10 @@ function Ticket({ tickets }) {
             <div className="ticket-item" key={i}>
                 <div className="side">
                     <img src="./images/Logo.svg" alt={carrier} />
-                    <button className='buy-btn'>Купить за {price}Р</button>
+                    <button className='buy-btn'>
+                        <span>Купить</span>
+                        <span>за {price}Р</span>
+                    </button>
                 </div>
                 <div className='content'>
                     <div className='flight-brief'>
@@ -46,6 +49,7 @@ function Ticket({ tickets }) {
                             destination={origin}
                             destinationName={origin_name}
                             destinationTime={departure_date}
+                            direction={'departure'}
                         />
 
                         <div className='flight-brief-layovers'>
@@ -61,6 +65,7 @@ function Ticket({ tickets }) {
                             destination={destination}
                             destinationName={destination_name}
                             destinationTime={arrival_date}
+                            direction={'arrival'}
                         />
                     </div>
                 </div>
